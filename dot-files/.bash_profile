@@ -9,6 +9,9 @@ alias vim='vim -p'
 alias errors='clear; cd /srv/logs/; tail -n 0 -f access.log php_error.log; cd -'
 alias azure="/opt/microsoft/azure/bin/azure"
 
+# make sure that bash_history is only appendable
+chattr +a ~/.bash_history
+
 # history all the things
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
 export PROMPT_COMMAND="history -a"
