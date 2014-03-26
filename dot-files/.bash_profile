@@ -8,3 +8,8 @@ alias grep='grep --color'
 alias vim='vim -p'
 alias errors='clear; cd /srv/logs/; tail -n 0 -f access.log php_error.log; cd -'
 alias azure="/opt/microsoft/azure/bin/azure"
+
+# history all the things
+export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
+export PROMPT_COMMAND="history -a"
+shopt -s histappend
