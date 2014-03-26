@@ -1,0 +1,12 @@
+[ui]
+username = Tim Groeneveld <tim@timg.ws>
+ssh = /usr/bin/ssh -i /home/tim/.ssh/code_idrsa
+
+[diff]
+git = true
+
+[extensions]
+histedit =
+record =
+mq =
+hgext.convert=
