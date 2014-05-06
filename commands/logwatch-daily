@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# General variables
+recipient_email="tim@domain"
+recipient_gpg_pub_key="7C226C31"
+
+# Echo beginning of run
+echo "$(date +%F:%T) Encrypted Logwatch run beginning"
+
+# Generate random filename for run
+file="$(mktemp)"
+
+# Check if removed-but-not-purged
+test -x /usr/share/logwatch/scripts/logwatch.pl || exit 0
+
+# execute logwatch and save to random file
+file=${file,,}
+/usr/sbin/logwatch --save $file
+
+# Check file exists
+test -s $file || exit 1
+gpg --recipient $recipient_gpg_pub_key --armor --encrypt $file
+
+# mail encrypted log to me
+mail  -s "logwatch for $(date +%d-%b-%Y)" $recipient_email< "$file".asc
+
+# clean-up
+rm $file && rm $file.asc
+
+# Echo end of run
+echo "$(date +%F:%T) Encrypted Logwatch run successful. Exiting"
