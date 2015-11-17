@@ -1,0 +1,18 @@
+startup_message off
+
+# chdir
+
+defutf8 on
+utf8 on on
+
+# Enable window monitoring & notifications
+monitor on
+defmonitor on
+
+#escape ^za
+
+autodetach on
+
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d%{W}%{g}]'
