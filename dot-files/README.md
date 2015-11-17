@@ -28,3 +28,6 @@ Skip words using `SHIFT`+(`LEFT`|`RIGHT`)
 
 ## .vimrc
 Add indenting for HTML & PHP. Set autocomplete for PHP function names. Use spaces for indenting, not tabs and also add the file name & file position to the status line at the bottom of vim.
+
+## .screenrc
+A small screen configuration file that enables UTF-8 support in screen, as well as adds two status lines, showing the names of tabs and the host that is currently logged in.
